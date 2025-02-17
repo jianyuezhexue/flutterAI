@@ -112,7 +112,7 @@ class _ChatScreenState extends State<Talk> {
               onSubmitted: (_) => _handleSend(),
             ),
           ),
-          IconButton(icon: const Icon(Icons.send), onPressed: _handleSend),
+          IconButton(icon: const Icon(Icons.send),color: Colors.amber, onPressed: _handleSend),
         ],
       ),
     );
