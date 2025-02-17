@@ -1,4 +1,3 @@
-import 'package:assistant/pages/home/bottom_tab_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/errors/page_not_found.dart';
@@ -19,7 +18,7 @@ class Routes {
     return pageRoute(routeBuilder!(settings), settings: settings);
   }
 
-  // 疯转跳转路由
+  // 封装跳转路由
   static MaterialPageRoute pageRoute(
     Widget page, {
     RouteSettings? settings,
