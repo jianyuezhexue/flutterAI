@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:assistant/api/ai.dart';
 
-
 class Talk extends StatefulWidget {
   const Talk({super.key});
 
@@ -29,27 +28,29 @@ class _ChatScreenState extends State<Talk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('AI对话'), elevation: 4),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              itemCount: _messages.length,
-              padding: const EdgeInsets.all(12),
-              itemBuilder: (context, index) {
-                final message = _messages[index];
-                return _buildMessageBubble(message);
-              },
+      // appBar: AppBar(title: const Text('AI对话'), elevation: 4),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                controller: _scrollController,
+                itemCount: _messages.length,
+                padding: const EdgeInsets.all(12),
+                itemBuilder: (context, index) {
+                  final message = _messages[index];
+                  return _buildMessageBubble(message);
+                },
+              ),
             ),
-          ),
-          if (_isLoading)
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 12),
-              child: CircularProgressIndicator(),
-            ),
-          _buildInputArea(),
-        ],
+            if (_isLoading)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 12),
+                child: CircularProgressIndicator(),
+              ),
+            _buildInputArea(),
+          ],
+        ),
       ),
     );
   }
